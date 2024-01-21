@@ -4,6 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Navbar Formations</title>
+    <link rel="stylesheet" href="styles/style.css" />
   </head>
-  <body></body>
+  <body>
+    <!-- Nav Formation 01 -->
+    <!-- This Formation contains only LOGO and Links-->
+    <nav
+      id="navbar-formations-navbar-01"
+      class="navbar-of-navbar-formations border-thin"
+    >
+      <!-- Webpage Logo -->
+      <h1 class="navbar-formations-h1">Site Logo</h1>
+
+      <!-- Menu Opener - Hamburger Icon -->
+      <label
+        for="navbar-formations-menu-dropdown-opener-01"
+        class="navbar-formations-menu-label"
+      >
+        <img src="icons/menu.svg" alt="Menu Icon" />
+      </label>
+      <input
+        type="checkbox"
+        id="navbar-formations-menu-dropdown-opener-01"
+        class="navbar-formations-checkbox"
+        hidden
+      />
+
+      <!-- Navigation Links -->
+      <div class="navbar-formations-links-container">
+        <ul class="navbar-formations-ul">
+          <li><a href="#" class="navbar-formations-a">Home</a></li>
+          <li><a href="#" class="navbar-formations-a">About</a></li>
+          <li><a href="#" class="navbar-formations-a">Blog</a></li>
+          <li><a href="#" class="navbar-formations-a">Contacts</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="navbar-formation-separator-div"></div>
+  </body>
 </html>

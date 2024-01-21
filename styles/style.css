@@ -1,0 +1,116 @@
+/* Ubuntu Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+/* Global Styles */
+.navbar-of-navbar-formations * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* Common - Shared Styles */
+.navbar-formation-separator-div {
+    height: 40px;
+}
+
+/* Gaps can be Changed by the  */
+.navbar-of-navbar-formations {
+    padding: 18px;
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-formations-h1 {
+    font-size: 2rem;
+    font-weight: 700;
+
+    grid-area: logo;
+}
+
+.navbar-formations-links-container {
+    display: grid;
+    transition: grid-template-rows 0.3s, padding 0.3s;
+
+    grid-area: links;
+}
+
+.navbar-formations-ul {
+    list-style: none;
+    display: flex;
+    gap: 5px;
+    overflow: hidden;
+}
+
+.navbar-formations-a {
+    color: black;
+    text-decoration: none;
+    padding: 8px;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+
+/* The Menu Button primarily is Hidden for every Navbar */
+.navbar-formations-menu-label {
+    display: none;
+    text-align: right;
+    grid-area: menu;
+    cursor: pointer;
+}
+
+.navbar-formations-menu-label img {
+    width: 35px;
+}
+
+
+/* Navbar #01 */
+#navbar-formations-navbar-01 {
+    /* Using Grid-Template-Areas to Style the Layout */
+    grid-template-areas:
+        "logo links"
+    ;
+}
+
+
+/* Utility Classes */
+/* This Classes are used to give some temporary Styles - User can remove the Class Names to Remove the style */
+.border-thin {
+    border: 1px solid black;
+}
+
+
+
+/* Media Queries */
+/* The Breakpoint starts When "width < 600px" */
+/* For some Navbar, it maybe earlier. But to use only One breakpoint, 600px is Correct for Mobile Devices as well as Smaller Screens */
+@media (width < 600px) {
+    #navbar-formations-navbar-01 {
+        grid-template-areas:
+            "logo menu"
+            "links links"
+        ;
+    }
+
+    .navbar-formations-menu-label {
+        display: inline;
+    }
+
+    .navbar-formations-ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .navbar-formations-links-container {
+        grid-template-rows: 0fr;
+    }
+
+    .navbar-formations-checkbox:checked~.navbar-formations-links-container {
+        padding-block: 8px;
+
+        grid-template-rows: 1fr;
+    }
+
+}
