@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar Formations</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <style>
+      /* Ubuntu Font Import */
+      @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap");
+
+      /* Global Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Ubuntu", sans-serif;
+      }
+
+      /* Gaps can be Changed by the  */
+      nav {
+        padding: 18px;
+        display: grid;
+        align-items: center;
+        justify-content: space-between;
+
+        /* Using Grid-Template-Areas to Style the Layout */
+        grid-template-areas: "logo links button";
+      }
+
+      .page-title {
+        font-size: 2rem;
+        font-weight: 700;
+
+        grid-area: logo;
+      }
+
+      .nav-links-container {
+        display: grid;
+        transition: grid-template-rows 0.2s, padding 0.2s;
+
+        grid-area: links;
+      }
+
+      .nav-links-container ul {
+        list-style: none;
+        display: flex;
+        gap: 5px;
+        overflow: hidden;
+      }
+
+      .nav-links-container li {
+        display: contents;
+      }
+
+      .nav-links-container a {
+        color: black;
+        text-decoration: none;
+        padding: 8px;
+        font-weight: 500;
+        font-size: 1.1rem;
+      }
+
+      /* The Menu Button primarily is Hidden for every Navbar */
+      .menu-dropdown-label {
+        display: none;
+        text-align: right;
+        grid-area: menu;
+        cursor: pointer;
+      }
+
+      .menu-dropdown-label img {
+        width: 35px;
+      }
+
+      .nav-button {
+        grid-area: button;
+        font-size: 1.2rem;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 10px;
+        outline: none;
+        background-color: dodgerblue;
+        color: white;
+      }
+
+      /* Media Queries */
+      /* The Breakpoint starts When "width < 600px" */
+      /* For some Navbar, it maybe earlier. But to use only One breakpoint, 600px is Correct for Mobile Devices as well as Smaller Screens */
+      @media (width < 600px) {
+        nav {
+          grid-template-areas:
+            "menu logo button"
+            "links links links";
+        }
+
+        .page-title {
+          font-size: 1.7rem;
+        }
+
+        .menu-dropdown-label {
+          display: inline;
+        }
+
+        .nav-links-container ul {
+          flex-direction: column;
+          align-items: center;
+          gap: 0;
+        }
+
+        .nav-links-container {
+          grid-template-rows: 0fr;
+          border-bottom: 0px solid black;
+          width: 70%;
+          margin-inline: auto;
+        }
+
+        #dropdown-menu-opener:checked ~ .nav-links-container {
+          padding-block: 10px;
+          border-width: 1px;
+
+          grid-template-rows: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Nav Formation 01 -->
+    <!-- This Formation contains only LOGO and Links-->
+    <nav>
+      <!-- Menu Opener - Hamburger Icon -->
+      <label for="dropdown-menu-opener" class="menu-dropdown-label">
+        <img src="../icons/menu.svg" alt="Menu Icon" />
+      </label>
+      <input type="checkbox" id="dropdown-menu-opener" hidden />
+
+      <!-- Webpage Logo -->
+      <h1 class="page-title">Site Logo</h1>
+
+      <!-- Navigation Links -->
+      <div class="nav-links-container">
+        <ul class="navbar-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contacts</a></li>
+        </ul>
+      </div>
+
+      <button class="nav-button">Login</button>
+    </nav>
+  </body>
+</html>
